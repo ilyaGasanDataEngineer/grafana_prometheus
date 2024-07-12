@@ -1,0 +1,17 @@
+{
+	"ulid": "01J2K03WBC3M813JS5675ERJPB",
+	"minTime": 1720718222166,
+	"maxTime": 1720720800000,
+	"stats": {
+		"numSamples": 309822,
+		"numSeries": 2244,
+		"numChunks": 2375
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01J2K03WBC3M813JS5675ERJPB"
+		]
+	},
+	"version": 1
+}

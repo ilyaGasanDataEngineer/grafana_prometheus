@@ -1,0 +1,21 @@
+groups:
+  - name: AllInstances
+    rules:
+    - alert: InstanceDown
+      expr: up == 0
+      for: 5s
+    - alert: HiostHiCpuLoad
+      expr: 100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[2m])) * 100) > 85
+    - alert: Hi_host_network50mb
+      expr: rate(node_network_receive_bytes_total{device!="lo"}[1m]) * 8 / 1000000 > 50
+      for: 1m
+    - alert: CPU_load_50
+      expr: 100 - (avg(rate(node_cpu_seconds_total{mode="idle"}[1m])) by (instance) * 100) > 50
+      for: 1m
+    - alert: AllDown
+      expr: (up{job="consul_exporter"} == 0) and (up{job="node_exporter"} == 0)
+      for: 5s
+      labels:
+        severity: critical
+      annotations:
+        summary: "All monitored instances are down"
